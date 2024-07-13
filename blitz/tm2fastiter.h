@@ -34,7 +34,7 @@
 #ifdef BZ_HAVE_STD
 #include <sstream>
 #else
-#include <strstream.h>
+#include <strstream>
 #endif
 
 #include <blitz/constpointerstack.h>
@@ -372,7 +372,7 @@ namespace blitz
         str += BZ_DEBUG_TEMPLATE_AS_STRING_LITERAL(T_numtype);
         str += ",";
 
-        char tmpBuf[TEMP_SIZE_BUFFER];
+        char tmpBuf[TEMP_SIZE_BUFFER] = {0};
         snprintf(tmpBuf, TEMP_SIZE_BUFFER, "%d", N_rows);
 
         str += tmpBuf;
